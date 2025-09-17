@@ -9,11 +9,23 @@ async function init() {
     topic: "rider-updates",
     messages: [
       {
-        partition: 0,
+        partition: 1,
         key: "location-update",
-        value: JSON.stringify({ name: "tony stark", loc: "South" }),
+        value: JSON.stringify({ name: "Ayush Daniels", loc: "South" }),
       },
     ],
+  
+  });
+  await producer.send({
+    topic: "college-updates",
+    messages: [
+      {
+        partition: 1,
+        key: "location-update",
+        value: JSON.stringify({ name: "Ayush Daniels", loc: "South" }),
+      },
+    ],
+  
   });
   console.log("Producer has sent the data");
   console.log("disconnecting Producer");

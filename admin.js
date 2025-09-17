@@ -11,6 +11,10 @@ async function init() {
         topic: "rider-updates",
         numPartitions: 2,
       },
+      {
+        topic:"college-updates",
+        numPartitions:2
+      }
     ],
   });
   console.log("Topics Created");

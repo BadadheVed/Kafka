@@ -5,7 +5,7 @@ const init = async () => {
   console.log("Connection The Consumer");
   await consumer.connect();
   console.log("Consumer is Connected");
-  await consumer.subscribe({ topics: ["rider-updates"], fromBeginning: true });
+  await consumer.subscribe({ topics: ["rider-updates","college-updates"], fromBeginning: true });
   await consumer.run({
     eachMessage: async ({ topic, partition, message, heartbeat, pause }) => {
       console.log(
